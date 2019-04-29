@@ -1,0 +1,69 @@
+<view class='header'>
+<view class='head'>头像</view>
+<view class='image'>
+ <image src='../manage/images/img.png' style="width:120rpx;height:120rpx;"></image>
+</view>
+</view>
+<view class='info'>
+<view class='name'>
+<view class='name_n'>姓名</view>
+<view class='name_i'>
+<view class='name_i_i'>{{realName}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>性别</view>
+<view class='name_i'>
+<view class='name_i_i'>{{sex==0?"未知":(sex==1?"男":"女")}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>出生日期</view>
+<view class='name_i'>
+<view class='name_i_i'>{{birthday}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>手机号</view>
+<view class='name_i'>
+<view class='name_i_i'>{{phone}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n' style='width:30%;'>身份证</view>
+<view class='name_i' style='width:70%;'>
+<view class='name_i_i'>{{idNo}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n' style='width:20%;'>地址</view>
+<view class='name_i' style='width:80%;'>
+<view class='name_i_i'>{{address}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>所属机构</view>
+<view class='name_i'>
+<view class='name_i_i'>{{instName}}</view>
+</view>
+</view>
+<!--  -->
+<view class='name' style='border-bottom:none;'>
+<view class='name_n'>服务机构</view>
+<view class='name_i'>
+<view class='name_i_i'>{{serviceInstName}}</view>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='btn' wx:if='{{show}}'>
+<view class='pass' bindtap='click_pass'>拒绝认证</view>
+<view class='t_g' bindtap='click_t_g'>通过认证</view>
+</view>
+<view class='c_Z' wx:else style='color:{{color}}'>{{show_o}}</view>

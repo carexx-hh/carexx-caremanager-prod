@@ -1,0 +1,69 @@
+page{
+  background: #f6f6f6;
+}
+.header{
+  border-top: 1rpx solid #f6f6f6;
+  width: 100%;
+  height:143rpx;
+  background:#FFFFFF;
+  display: flex;
+  line-height: 143rpx;
+  align-items: center;
+  padding: 0 33rpx 0 29rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx; 
+}
+.header .head{
+  width: 50%;
+  height: 100%;
+  font-size: 30rpx;
+  color: #333333;
+}
+.header .image{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.info{
+  width: 100%;
+  padding:0 0 0 29rpx;
+  box-sizing: border-box;
+  background: white;
+}
+.info .name{
+width: 100%;
+height: 99rpx;
+display: flex;
+border-bottom: 1rpx solid #f6f6f6;
+}
+.info .name .name_n{
+  width: 50%;
+  height: 100%;
+  line-height: 99rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.info .name .name_i{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  color: #999999;
+  padding-right: 32rpx;
+  box-sizing: border-box;
+}
+.btn{
+  width:560rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(87,145,253,1) 12%,rgba(80,120,252,1) 100%);
+  border-radius:44rpx;
+  font-size:34rpx;
+  line-height:88rpx;
+  color:#FFFFFF;
+  text-align: center;
+  margin:105rpx 95rpx 0;
+}

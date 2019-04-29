@@ -1,0 +1,75 @@
+<view class='header'>
+<view class='head'>头像</view>
+<view class='image'>
+ <image src='../manage/images/img.png' style="width:120rpx;height:120rpx;"></image>
+</view>
+</view>
+<view class='info'>
+<view class='name'>
+<view class='name_n'>姓名</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.realName||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>性别</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.sex==0?"未知":(coupons.sex==1?"男":"女")}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>工种</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.workTypeName||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>手机号</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.phone||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n' style='width:30%;'>身份证</view>
+<view class='name_i' style='width:70%;'>
+<view class='name_i_i'>{{coupons.idNo||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n' style='width:20%;'>地址</view>
+<view class='name_i' style='width:80%;'>
+<view class='name_i_i'>{{coupons.address||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name'>
+<view class='name_n'>所属机构</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.instName||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+<!--  -->
+<view class='name' style='border-bottom:none;'>
+<view class='name_n'>服务机构</view>
+<view class='name_i'>
+<view class='name_i_i'>{{coupons.serviceInstName||''}}</view>
+<image src='../details/images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);" bindtap='click_edit'></image>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='btn' bindtap='click_cencel'>取消认证</view>
+<view style='width:100%;text-align:center;font-size:26rpx;color:#A5AAB8;margin-top:20rpx'>注意：谨慎操作,取消认证后,</view>
+<view style='width:100%;text-align:center;font-size:26rpx;color:#A5AAB8;margin-top:10rpx'>该护工需进行再次认证!</view>

@@ -1,0 +1,106 @@
+<view class='notice' style='width:100%;height:88rpx;background:#E7F3FF;line-height:88rpx;display:flex;align-items:center'>
+<image src='../Order-details/images/notice.png' style='width:33rpx;height:29rpx;margin-left:30rpx;'></image>
+<view class='notice_s' style='font-size:26rpx;color:#5489FD;margin-left:19rpx;'>当前订单已完成</view>
+</view>
+<view class='header'>
+<image src='../index/images/o-o.png' style="width:160rpx;height:160rpx;"></image>
+<view class='xiang-q'>
+<view class='title'>{{coupons.serviceName}}</view>
+<view class='time'>详细介绍：{{coupons.serviceExplain}}</view>
+<view class='price'>￥<text class='shu-zi' style='font-size:46rpx;'>{{coupons.servicePrice}}</text>/天<text class='holiday'> (法定节假日当天费用翻倍)</text></view>
+</view>
+</view>
+<view class='material'>
+  <view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>病人资料</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>姓名</view>
+<view class='t-k-name'>
+<text>{{coupons.patientName}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>病区</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{coupons.inpatientArea}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>床号</view>
+<view class='t-k-name'>
+<text>{{coupons.inpatientWard}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='material'>
+  <view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>服务时间</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>订单开始日期</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{starttime}}</text>
+</view>
+</view>
+<!--  -->
+<view class='kind'>
+<view class='kind-name'>订单结束日期</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{endtime}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='material'>
+  <view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>服务信息</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>服务人员</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{coupons.staffName}}</text>
+</view>
+</view>
+<!--  -->
+<view class='kind'>
+<view class='kind-name'>联系方式</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{coupons.staffPhone}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;margin-top:20rpx;height:170rpx;'>
+<view class='kind' style='display:block;border-bottom:none;'>
+<view class='kind-name' style='line-height:99rpx;'>备注</view>
+<view class='t-k-name' style='width:100%;line-height:40rpx;display:block'>
+<text>{{coupons.orderRemark}}</text>
+</view>
+</view> 
+</view>
+<!--  -->
+<view class='bottom'>
+<view class='z-price'><text style='color:#767C8C'>合计:</text>￥<text class='shu-zi' style='font-size:46rpx;'>{{coupons.orderAmt}}</text><text style='color:#767C8C'>（共服务{{serviceDays}}天）</text>
+</view>
+</view>
+

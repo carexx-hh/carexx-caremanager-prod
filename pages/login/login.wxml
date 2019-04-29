@@ -1,0 +1,11 @@
+<view  style='width:100%'>
+<image src='./images/login.png' style='width:770rpx;height:553rpx' class='img'></image>
+<image src='./images/ab.png' style='width:171rpx;height:174rpx' class='ab'></image>
+</view>
+<view class='login'>
+<form bindsubmit="formSubmit">
+<input placeholder='请输入您的账号' name='input_name' class='input-name' type='text' placeholder-style='font-size:28rpx;color:rgba(165,170,184,1);' bindinput="nameInput"></input>
+<input placeholder='请输入密码' name='input_password' class='input-pass' type='text' password='true' placeholder-style='font-size:28rpx;color:rgba(165,170,184,1);' bindinput="passInput"></input>
+<button class="button" bindtap="regist" form-type='submit' open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+</form>
+</view>

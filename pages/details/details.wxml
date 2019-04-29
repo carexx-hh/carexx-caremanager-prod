@@ -1,0 +1,138 @@
+<view wx:if="{{project.serviceStatus==3}}" class='notice' style='width:100%;height:88rpx;background:#E7F3FF;line-height:88rpx;display:flex;align-items:center'>
+<image src='../Order-details/images/notice.png' style='width:33rpx;height:29rpx;margin-left:30rpx;'></image>
+<view class='notice_s' style='font-size:26rpx;color:#5489FD;margin-left:19rpx;'>等待护工确认</view>
+</view>
+<view class='header'>
+<image src='../index/images/o-o.png' style="width:160rpx;height:160rpx;"></image>
+<view class='xiang-q'>
+<view class='title'>{{project.serviceName}}</view>
+<view class='time'>详细介绍：{{project.serviceExplain}}</view>
+<view class='price'>￥<text class='shu-zi' style='font-size:46rpx;'>{{project.servicePrice}}</text>/天<text class='holiday'> (法定节假日当天费用翻倍)</text></view>
+</view>
+</view>
+<view class='material'>
+  <view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>病人资料</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>姓名</view>
+<view class='t-k-name'>
+<text>{{project.patientName}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>手机号</view>
+<view class='t-k-name' style='width:38%;'>
+<text>{{project.patientPhone}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>病区</view>
+<view class='t-k-name' style='width:40%;'>
+<text>{{project.inpatientArea}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>床号</view>
+<view class='t-k-name'>
+<text>{{project.accurateAddress}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='material'>
+<view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>服务时间</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'>
+<view class='kind'>
+<view class='kind-name'>服务开始时间</view>
+<view class='t-k-name' style='width:50%;'>
+<text>{{orderStatus==1?starttime:endtime}}</text>
+</view>
+</view>
+</view>
+<!--  -->
+<view class='b-zhu' style='height:99rpx;margin-bottom:20rpx'>
+<view class='title'>病人备注</view>
+<view class='right' style='width:50%;display:flex;justify-content: flex-end;font-size:28rpx;color:#A5AAB8;'>
+<text>{{project.orderRemark}}</text>
+</view>
+</view>
+<!--  -->
+<view class='material'>
+  <view class='title'>
+<view class='z-s'></view>
+<view class='m-s'>服务信息</view>
+  </view>
+</view>
+<!--  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;'> 
+<view class='kind'>
+<view class='kind-name serviceStaffId' style='width:50%;'>{{orderStatus==1?"选择护工":"更换护工"}}</view>
+<view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items:center;' bindtap='choose_nurse'>
+<view class="picker" style='font-size:14px;color:#A5AAB8'>{{nurse_name}}</view>
+<image wx:if="{{project.serviceStatus!==3}}" src='./images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);"></image>
+</view>
+</view>
+</view>
+<!--结算比例  -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;margin-bottom:79rpx' wx:if="{{project.serviceStatus==3}}"> 
+<view class='kind'>
+<view class='kind-name workTypeSettleId' style='width:50%;'>结算比例</view>
+<view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items:center;' bindtap='choose_nurse'>
+<view class="picker" style='font-size:14px;color:#A5AAB8'>{{project.settleRatio}}</view>
+<image wx:if="{{project.serviceStatus!==3}}" src='./images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:-4rpx;transform:rotate(-90deg);"></image>
+</view>
+</view>
+</view>
+<!-- 结算比例 -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;height:{{bottom_x}};margin-bottom:{{orderStatus==1?bottom_6:"0"}}' wx:else>
+<view class='kind'>
+<view class='kind-name workTypeSettleId' style='width:50%;'>结算比例</view>
+<view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items: center;'>
+    <picker bindchange="bindTimeChange" name='input_starttime'  value="{{timearray[timeindex]}}" range="{{nurse_bl}}" class='picker-time' style='width:50%;display:flex;justify-content: flex-end;align-items:center;'>
+        <view class="picker" style='font-size:14px;color:#A5AAB8;float:left;'>
+        {{start_name}}
+        <image src='./images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:4rpx;"></image>
+        </view>
+    </picker>
+</view>
+</view>
+</view>
+
+<!-- 班次选择 -->
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;height:{{bottom_x}};margin-bottom:{{bottom_6}}' wx:if="{{project.serviceStatus!=3&&orderStatus!=1}}">
+<view class='kind'>
+<view class='kind-name schedulingType' style='width:50%;'>班次选择</view>
+<view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items: center;'>
+    <picker bindchange="bindSchedulingTypeChange" name='select_schedulingType'  value="{{index}}" range="{{schedulingTypes}}"class='picker-time' style='width:50%;display:flex;justify-content: flex-end;align-items:center;'>
+        <view class="picker" style='font-size:14px;color:#A5AAB8;float:left;'>
+        {{schedulingTypes[schedulingType]||'请选择'}}
+        <image src='./images/bottom.png' style="width:21rpx;height:11rpx;margin-left:26rpx;margin-bottom:4rpx;"></image>
+        </view>
+    </picker>
+</view>
+</view>
+</view>
+<button wx:if="{{project.serviceStatus!==3}}" class="button" bindtap="regist" form-type='submit' style='bottom:{{bottom}}'>{{orderStatus==1?"确认派单":"再次派单"}}</button>
+<view wx:if="{{project.serviceStatus!==3}}" class="buuton-t"></view>
+<!-- 
+-->
+

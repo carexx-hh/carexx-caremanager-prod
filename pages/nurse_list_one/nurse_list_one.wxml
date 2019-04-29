@@ -1,0 +1,27 @@
+<!--头部search切换部分start-->
+<view class='header'>
+<from class='b-sea' bindsubmit='searchSubmitFn'>
+<image class='icon-sea' src='../manage/images/search.png' style="width:27rpx;height:27rpx;margin:0 13rpx 0 30rpx;"></image>
+<input class='search' name='input' value="{{searchValue}}"  placeholder='请输入护工姓名' type='text' confirm-type='search' bindconfirm="searchSubmitFn" placeholder-style='font-size:27rpx;color:rgba(165,170,184,1);'/>
+</from>
+</view>
+ <!--头部search部分end-->
+<!--切换内容部分start-->
+<scroll-view class='mySwiper' scroll-y="true" style="height:{{height}}px;overflow-y:scroll">
+      <block  wx:for='{{project}}' wx:key="id">
+        <view class='item' bindtap='clickDetails' data-realname='{{item.realName}}' data-id='{{item.id}}'>
+             <view style='width:160rpx;height:160rpx;'>
+               <image src='../manage/images/img.png' style="width:160rpx;height:160rpx;"></image>
+             </view>
+             <view class='xiang-q'>
+               <view class='title'>{{item.realName}}</view>
+               <view class='time' wx:key='index'>所属机构：{{item.instName}}</view>
+               <view class='price'>服务机构：{{item.serviceInstName}}</view>
+                <view class='phone' wx:key='index'>联系方式：{{item.phone}}</view>
+             </view>
+             <view class='cao-z'>
+               <view class='zh-tai'>目前服务<text style='color:#5489FD'>{{item.patientNum}}</text>人</view>
+            </view>
+       </view>
+      </block>
+</scroll-view>

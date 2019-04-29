@@ -1,0 +1,43 @@
+<view class='header' bindtap='click_details'>
+<view class='left' style='width:30%'>
+<image  src="{{userInfo.avatarUrl}}"  class='tx'></image>
+</view>
+ <view class='right' style='width:40%'>
+ <view class='name'>管理员-{{coupons.name}}</view>
+ <view class='phone' bindtap='bindphone' data-phone='{{phone}}'>{{coupons.account}}</view>
+ </view>
+ <view style='display:flex;justify-content:flex-end;width:30%;'>
+ <image src='./images/fan_h.png' class='j-t' style='width:18rpx;height:30rpx;' ></image>
+ </view>
+</view>
+<view class='middle'>
+<view class='z-h' bindtap='click_nurse'>
+<image src='./images/z-h.png' class='img' style='width:40rpx;height:40rpx;'></image>
+<view style='display:flex;justify-content:space-between;align-items:center;width:603rpx;margin-left:26rpx;'>
+<view class='m-s' style='margin-left:0;'>护工认证</view>
+<view style='width:18px;height:17px;background:#FF0000;border-radius:50%;font-size:23rpx;color:#FFFFFF;margin-right:18rpx;line-height:17px;text-align:center;' wx:if='{{show}}'>{{message_nurse}}</view>
+</view>
+<image src='./images/j-t.png' class='j-t' style='width:11rpx;height:21rpx;'></image>
+</view>
+<view class='x-hx'></view>
+<view class='set' bindtap='click_message'>
+<image src='./images/message.png' class='img' style='width:40rpx;height:40rpx;'></image>
+<view style='display:flex;justify-content:space-between;align-items:center;width:603rpx;margin-left:26rpx;'>
+<view class='m-s' style='margin-left:0;'>消息通知</view>
+<view wx:if="{{data>0}}" style='width:18px;height:17px;background:#FF0000;border-radius:50%;font-size:23rpx;color:#FFFFFF;margin-right:18rpx;line-height:17px;text-align:center;'>{{data}}</view>
+</view>
+<image src='./images/j-t.png' class='j-t' style='width:11rpx;height:21rpx;'></image>
+</view>
+<view class='x-hx'></view>
+<view class='set'  bindtap='click_order'>
+<image src='./images/set.png' class='img' style='width:40rpx;height:40rpx;'></image>
+<view class='m-s'  hover-class="none">我的订单</view>
+<image src='./images/j-t.png' class='j-t' style='width:11rpx;height:21rpx;'></image>
+</view>
+<view class='x-hx'></view>
+<view class='g-y'>
+<image src='./images/g-y.png' class='img' style='width:40rpx;height:40rpx;'></image>
+<navigator class='m-s' url='/pages/about-us/about-us' hover-class="none">关于我们</navigator>
+<image src='./images/j-t.png' class='j-t' style='width:11rpx;height:21rpx;'></image>
+</view>
+</view>

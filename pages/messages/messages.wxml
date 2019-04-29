@@ -1,0 +1,24 @@
+<view class='all' wx:if='{{show}}'>
+<icon wx:if="{{selectAllStatus}}"  type="circle" color="#A5AAB8" size='20' bindtap="selectAll"/>
+<icon wx:else type="success" size='20' color="#5489FD" bindtap="selectAll"/>
+ <view class='q_x'>全选</view>
+</view>
+<view class='kind' style='height:{{height}};border-top: {{border_top}}1rpx solid #DBDBDB;margin-top:{{margin_top}}rpx;'>
+<block wx:for="{{coupons}}" wx:key="">
+<view class='k_kind' style='border-bottom:1px solid #DEE5EB'>
+<block  wx:if='{{show}}'>
+ <icon wx:if="{{item.active}}" type="circle" color="#A5AAB8" bindtap="selectList" size='20' data-index="{{index}}"/>
+ <icon wx:else type="success" color="#5489FD" size='20'  bindtap="selectList" data-index="{{index}}"/>
+ </block>
+ <view class='right' bindtap='click_status' data-id='{{item.id}}'data-orderno='{{item.orderNo}}' data-orderstatus='{{item.orderStatus}}' data-msgstatus='{{item.msgStatus}}'>
+ <view class='q_x' style='font-size:26rpx;color:{{item.msgStatus==1?"#3B404E":"#A5AAB8"}}'>{{item.msgContent}}</view>
+ <view class='time'style='font-size:22rpx;color:#A5AAB8' wx:key="index">{{time[index]}}</view>
+ </view>
+  </view>
+ </block>
+</view>
+<view class='btn' wx:if='{{show_bj}}' bindtap='click_bj'>编辑</view>
+<view class='bottom' wx:if='{{show_cz}}'>
+<view class='cancel' bindtap='click_cancel'>取消</view>
+<view class='del' bindtap='click_del'>删除</view>
+</view>
