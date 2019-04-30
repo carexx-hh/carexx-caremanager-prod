@@ -4,24 +4,27 @@
 </view>
  <!--头部tab切换部分end-->
 <!--切换内容部分start-->
-<scroll-view class='mySwiper' scroll-y="true" style="height:{{height}}px;overflow-y:scroll">
- <block wx:for="{{coupons}}" wx:key="">
-        <view class='item' bindtap='clickDetails' data-certificationstatus='{{item.certificationStatus}}' data-id='{{item.id}}' data-realname='{{item.realName}}' data-idno='{{item.idNo}}' data-sex='{{item.sex}}' data-birthday='{{item.birthday}}' data-phone='{{item.phone}}' data-address='{{item.address}}' data-instname='{{item.instName}}' data-serviceinstname='{{item.serviceInstName}}'>
-             <view style='width:160rpx;height:160rpx;'>
-               <image src='../manage/images/img.png' style="width:160rpx;height:160rpx;"></image>
-             </view>
-             <view class='xiang-q'>
-               <view class='title'>{{item.realName}}</view>
-               <view class='time' wx:key='index'>服务机构：<text>{{item.serviceInstName}}</text></view>
-               <view class='price' style='width:300rpx;'>联系方式：<text>{{item.phone}}</text></view>
-             </view>
-             <view class='cao-z' wx:if='{{show_o}}'>
-                <image src='./images/pass.png' style="width:111rpx;height:99rpx;"></image>
-             </view>
-             <view class='cao-z' wx:if='{{show_t}}'>
-                <image src='./images/adopt.png' style="width:111rpx;height:99rpx;"></image>
-             </view>
-       </view>
- </block>
+<scroll-view class='mySwiper' wx:if="{{!norecord}}" scroll-y="true" style="height:{{height}}px;overflow-y:scroll">
+    <block wx:for="{{coupons}}" wx:key="" >
+            <view class='item' bindtap='clickDetails' data-certificationstatus='{{item.certificationStatus}}' data-id='{{item.id}}' data-realname='{{item.realName}}' data-idno='{{item.idNo}}' data-sex='{{item.sex}}' data-birthday='{{item.birthday}}' data-phone='{{item.phone}}' data-address='{{item.address}}' data-instname='{{item.instName}}' data-serviceinstname='{{item.serviceInstName}}'>
+                <view style='width:160rpx;height:160rpx;'>
+                <image src='../manage/images/img.png' style="width:160rpx;height:160rpx;"></image>
+                </view>
+                <view class='xiang-q'>
+                <view class='title'>{{item.realName}}</view>
+                <view class='time' wx:key='index'>服务机构：<text>{{item.serviceInstName}}</text></view>
+                <view class='price' style='width:300rpx;'>联系方式：<text>{{item.phone}}</text></view>
+                </view>
+                <view class='cao-z' wx:if='{{show_o}}'>
+                    <image src='./images/pass.png' style="width:111rpx;height:99rpx;"></image>
+                </view>
+                <view class='cao-z' wx:if='{{show_t}}'>
+                    <image src='./images/adopt.png' style="width:111rpx;height:99rpx;"></image>
+                </view>
+        </view>
+    </block>
 </scroll-view>
+<block wx:else>
+    <image class='img' src='./images/record.png' style="width:326rpx;height:319rpx;position:absolute;top:220rpx;left:0;right:0;margin:auto;"></image>
+</block>
 <!--切换内容部分end-->

@@ -22,6 +22,7 @@ Page({
     coupons: [],
     show_o:false,
     show_t: false,
+    norecord:false,  //无记录
   },
   /**
    * 生命周期函数--监听页面加载
@@ -50,10 +51,12 @@ Page({
           },
           success: function (res) {
             console.log(res)
+            //无数据时norecord:true,有数据时norecord:false
             that.setData({
-              coupons: res.data.data,
-              show_o: false,
-              show_t: false,
+                coupons: res.data.data,
+                show_o: false,
+                show_t: false,
+                norecord: res.data.data.length == 0 ?true:false
             })
           }
         });
@@ -71,6 +74,7 @@ Page({
               coupons: res.data.data,
               show_o: false,
               show_t: true,
+              norecord: res.data.data.length == 0 ? true : false
             })
           }
         });
@@ -88,6 +92,7 @@ Page({
               coupons: res.data.data,
               show_o: true,
               show_t: false,
+              norecord: res.data.data.length == 0 ? true : false
             })
           }
         });
@@ -108,7 +113,8 @@ Page({
   onShow: function () {
     var that=this;
     that.setData({   //页面刷新时默认为未认证进行数据请求
-      current: 0
+      current: 0,
+      norecord:false
     })
     wx.request({
       url: app.globalData.baseUrl + '/inststaff/all_by_certification_status/1',
@@ -119,8 +125,10 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        //无数据时norecord:true//有数据时norecord:false
         that.setData({
-          coupons: res.data.data
+            coupons: res.data.data,
+            norecord: res.data.data.length == 0 ? true : false
         })
       }
     });
