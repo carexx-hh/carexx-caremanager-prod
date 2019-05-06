@@ -65,6 +65,7 @@ margin-left: 15rpx;
 }
 .list{
   background: #ffffff;
+  height: 99rpx;
 }
 .list .kind{
   width: 100%;

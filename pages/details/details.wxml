@@ -103,7 +103,7 @@
 </view>
 </view>
 <!-- 结算比例 -->
-<view class='list' style='padding-left:30rpx;box-sizing:border-box;'  wx:else>
+<view class='list' style='padding-left:30rpx;box-sizing:border-box;margin-bottom:{{(project.serviceStatus!=3&&orderStatus!=1)?"":(bottom_x||bottom_6)}}'  wx:else>
 <view class='kind'>
 <view class='kind-name workTypeSettleId' style='width:50%;'>结算比例</view>
 <view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items: center;'>
@@ -118,7 +118,7 @@
 </view>
 
 <!-- 班次选择 -->
-<view class='list'  wx:if="{{project.serviceStatus!=3&&orderStatus!=1}}" style='padding-left:30rpx;box-sizing:border-box;height:{{bottom_x}};margin-bottom:{{orderStatus==1?bottom_6:"0"}}'>
+<view class='list'  wx:if="{{project.serviceStatus!=3&&orderStatus!=1}}" style='padding-left:30rpx;box-sizing:border-box;margin-bottom:{{bottom_6||bottom_x}}'>
 <view class='kind'>
 <view class='kind-name schedulingType' style='width:50%;'>班次选择</view>
 <view class='date-name' style='width:50%;display:flex;justify-content: flex-end;align-items: center;'>
