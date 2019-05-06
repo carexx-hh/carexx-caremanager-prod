@@ -16,7 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.5.0",
 	"appid": "wx03ddb0d1907db443",
-	"projectname": "carexx-supportManagement",
+	"projectname": "carexx-caremanager-prod",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

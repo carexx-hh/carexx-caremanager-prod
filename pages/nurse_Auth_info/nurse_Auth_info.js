@@ -90,7 +90,7 @@ Page({
                  duration: 1000
                })
                setTimeout(function () {
-                 wx.switchTab({
+                 wx.redirectTo({
                    url: '../nurse_certification/nurse_certification',
                  })
                }, 1000)
