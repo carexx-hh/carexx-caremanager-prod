@@ -70,6 +70,7 @@ font-size:26rpx;
 color:rgba(165,170,184,1);
 }
 .item .xiang-q .price{
+width: 421rpx;
 margin-top: 11rpx;
 font-size:26rpx;
 color:rgba(165,170,184,1);
